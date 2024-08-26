@@ -62,16 +62,11 @@ public class EmployeeController {
         
         //start of employee displaying process
         for (Employee emp : empAry) {
-        	showEmpInfos(emp);
+        	emp.displayDetails();
+        	System.out.println("------------------------------------------------------------");
         }
         //end of employee displaying process
 
-	}
-	
-	private static void showEmpInfos(Employee emp) {
-		emp.displayDetails();
-		System.out.println("Total Salary:\t"+ emp.calculateSalary());
-		System.out.println("------------------------------------------------------------");
 	}
 	
 	private static String getEmpType() throws IOException {
