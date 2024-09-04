@@ -1,6 +1,6 @@
 package SE_Batch1.Assignment5;
 
-public abstract class Vehicle {
+public class Vehicle {
     protected String brand;
     protected String model;
 
@@ -9,5 +9,7 @@ public abstract class Vehicle {
         this.model = model;
     }
 
-    public abstract void displayInfo();
+    public void displayInfo() {
+    	
+    };
 }
