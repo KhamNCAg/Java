@@ -9,7 +9,7 @@ public class VehicleGenerator {
             VehicleRegisterService vehicleRegisterService = null;
 
             do {
-                System.out.println("Enter Vehicle Type (1.Car / 2.Truck / 3.Motorcycle): ");
+                System.out.print("Enter Vehicle Type (1.Car / 2.Truck / 3.Motorcycle): ");
                 int type = Integer.parseInt(br.readLine());
 
                 switch (type) {

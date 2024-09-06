@@ -6,8 +6,8 @@ public class MotorcycleRegisterService extends VehicleRegisterService {
 	
 	@Override
     public Vehicle registerWithInfo(Vehicle curVeh, BufferedReader br) throws Exception {
-		System.out.print("Does it have a sidecar? (true/false): ");
-        boolean hasSidecar = Boolean.parseBoolean(br.readLine());
+		System.out.print("Does it have a sidecar? (yes/no): ");
+        boolean hasSidecar = br.readLine().equalsIgnoreCase("yes") ? true : false;
         return new Motorcycle(curVeh.brand,curVeh.model, hasSidecar);
     }
 
