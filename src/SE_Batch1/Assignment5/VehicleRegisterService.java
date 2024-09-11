@@ -4,31 +4,28 @@ import java.io.*;
 import java.util.*;
 
 public class VehicleRegisterService {
-    private static List<Vehicle> vehicles = new ArrayList<>();
-    private Vehicle curVehicle;
+    public VehicleDao vehicleDao = new VehicleDao();
 
-    public void commonInfo(BufferedReader br) throws IOException {
-        System.out.print("Enter Model: ");
+
+    public void registerVehicle(BufferedReader br) throws Exception {
+    	System.out.print("Enter Model: ");
         String model = br.readLine();
         System.out.print("Enter Brand: ");
         String brand = br.readLine();
-        curVehicle = new Vehicle(model, brand);
+        vehicleDao.create(registerWithInfo(model, brand, br));
     }
 
-    public void registerVehicle(BufferedReader br) throws Exception {
-        commonInfo(br);
-        vehicles.add(registerWithInfo(curVehicle, br));
-    }
-
-    public Vehicle registerWithInfo(Vehicle curVeh, BufferedReader br) throws Exception {
+    public Vehicle registerWithInfo(String model, String Brand, BufferedReader br) throws Exception {
         return null;
     }
 
-    public void displayAllVehicles() {
-        System.out.println("Displaying all registered vehicles:");
-        for (Vehicle vehicle : vehicles) {
-            vehicle.displayInfo();
-            System.out.println("-----------------------------");
+    @SuppressWarnings("static-access")
+	public void displayAllVehicles() {
+        System.out.println("\nDisplaying all registered vehicles:");
+        Vehicle[] tmpDB = vehicleDao.getAll();
+        for (int i=0;i<vehicleDao.vehicleCount;i++) {
+            tmpDB[i].displayInfo();
+            System.out.println("---------------------------------------------------");;
         }
     }
 }

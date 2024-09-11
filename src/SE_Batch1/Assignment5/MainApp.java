@@ -2,7 +2,7 @@ package SE_Batch1.Assignment5;
 
 import java.io.*;
 
-public class VehicleGenerator {
+public class MainApp {
     public static void main(String[] args) {
         try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
             String flag = "";
@@ -26,7 +26,7 @@ public class VehicleGenerator {
                         System.out.println("Invalid vehicle type.");
                         return;
                 }
-
+ 
                 if (vehicleRegisterService != null) {
                     vehicleRegisterService.registerVehicle(br);
                 }

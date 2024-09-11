@@ -5,10 +5,10 @@ import java.io.BufferedReader;
 public class TruckRegisterService extends VehicleRegisterService {
 	
 	@Override
-    public Vehicle registerWithInfo(Vehicle curVeh, BufferedReader br) throws Exception {
+    public Vehicle registerWithInfo(String model, String brand, BufferedReader br) throws Exception {
 		System.out.print("Enter payload capacity (in tons): ");
         double payloadCapacity = Double.parseDouble(br.readLine());
-        return new Truck(curVeh.brand,curVeh.model, payloadCapacity);
+        return new Truck(model, brand, payloadCapacity);
     }
 
 }
